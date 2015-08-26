@@ -1,0 +1,31 @@
+{
+    "name": "heyday/hashpath",
+    "description": "Hash path provides functionality for generating and injecting file hashes/checksums into paths for generating cache-busting URLs",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cam Spiers",
+            "email": "cameron@heyday.co.nz",
+            "role": "Developer"
+        },
+        {
+            "name": "Pieter Vanderwerff",
+            "email": "pieter@heyday.co.nz",
+            "role": "Developer"
+        },
+        {
+            "name": "Stephen Holdaway",
+            "email": "stephen@heyday.co.nz",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/heyday/hashpath/issues",
+        "source": "https://github.com/heyday/hashpath"
+    },
+    "autoload": {
+        "psr-4": {
+            "Heyday\\HashPath\\": "src/"
+        }
+    }
+}
