@@ -39,7 +39,6 @@ class Hasher implements HasherInterface
      */
     protected function encodeRawHash($binary)
     {
-        echo strlen(bin2hex($binary)), "\n", strlen(base64_encode($binary));
         return base64_encode($binary);
     }
 }
