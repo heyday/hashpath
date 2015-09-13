@@ -4,7 +4,7 @@ HashPath provides functionality for generating URLs with a checksum either embed
 
 ```php
 // Actual file on disk:
-css/style.css)
+css/style.css
 
 // Using Hashpath:      ↙ File hash
 css/style.vpOQ8F6ybteKQQYND5dzZQ.css

@@ -12,6 +12,7 @@ class PathModifier
 {
     /**
      * Format: Hash injected into filename before the extension
+     * Requires the use of web server rewrite rules. See README.md for examples
      *
      * eg. /my/app/main.js => /my/app/main.v123456abcdef.js
      */
@@ -58,6 +59,18 @@ class PathModifier
         }
 
         return $this->formatPath($path, $hash, $this->format);
+    }
+
+    /**
+     * Join path components with mixed leading and trailing slashes
+     *
+     * @param string[] $paths
+     * @return string
+     */
+    public function joinPaths($paths)
+    {
+        $paths = array_filter($paths);
+        return preg_replace(',/+,','/', join('/', $paths));
     }
 
     /**
@@ -109,17 +122,5 @@ class PathModifier
     {
         // Remove characters other than those specified as unreserved in RFC3986
         return preg_replace('/[^A-Za-z0-9\-\.\_\~]/', '', $hash);
-    }
-
-    /**
-     * Join path components with mixed leading and trailing slashes
-     *
-     * @param string[] $paths
-     * @return string
-     */
-    protected function joinPaths($paths)
-    {
-        $paths = array_filter($paths);
-        return preg_replace(',/+,','/', join('/', $paths));
     }
 }
