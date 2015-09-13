@@ -47,6 +47,16 @@ class PathModifierTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    public function testJoinPaths()
+    {
+        $modifier = new PathModifier();
+
+        $this->assertEquals(
+            '/srv/example.com/public/assets/foo/bar/',
+            $modifier->joinPaths(array('/srv/example.com/public/', '/assets/', 'foo', 'bar///'))
+        );
+    }
+
     /**
      * Empty hashes should cause no change to the input URL
      */
