@@ -47,6 +47,9 @@ class PathModifierTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Empty hashes should cause no change to the input URL
+     */
     public function testEmptyHash()
     {
         $modifier = new PathModifier();
@@ -70,6 +73,9 @@ class PathModifierTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * Check URL unsafe characters are stripped from the outputted URL
+     */
     public function testStripNonUnreserved()
     {
         $modifier = new PathModifier();
