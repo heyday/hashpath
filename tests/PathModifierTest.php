@@ -87,5 +87,24 @@ class PathModifierTest extends \PHPUnit_Framework_TestCase
                 'L32cPgz9R+j8qwwSRHsr8A=='
             )
         );
+
+        $this->assertEquals(
+            '/what.vVdgiuy3g~.txt',
+            $modifier->injectHash(
+                '/what.txt',
+                '%*#V^dgiuy/)^3g~'
+            )
+        );
+    }
+
+    /**
+     * Only the PathModifier::FORMAT_* constants should be accepted as formats
+     * @expectedException \Heyday\HashPath\Exception
+     */
+    public function testNonsenseFormatFails()
+    {
+        $modifier = new PathModifier();
+        $modifier->setFormat('this is not the format you are looking for');
+        $modifier->injectHash('something-something-kratos.txt', 'deimos');
     }
 }
