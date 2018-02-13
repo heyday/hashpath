@@ -10,11 +10,11 @@ css/style.css
 css/style.vpOQ8F6ybteKQQYND5dzZQ.css
 ```
 
-##License
+## License
 
 Hash Path is licensed under an [MIT license](http://heyday.mit-license.org/)
 
-##Installation
+## Installation
 
 ### Web server config
 
@@ -56,9 +56,9 @@ If you have `phpunit` installed you can run HashPath's unit tests to see if ever
 $ phpunit
 ```
 
-##Contributing
+## Contributing
 
-###Code guidelines
+### Code guidelines
 
 This project follows the standards defined in:
 
